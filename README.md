@@ -6,22 +6,22 @@
 
 ## Description
 
-TODO: Description
+Given a [command](https://github.com/cypriss/mutations) like:
 
-## Features
+```ruby
+class MyCommand < Mutations::Command
+  extend Invariant
 
-## Examples
+  # ...
+end
+```
 
-    require 'invariant'
+Run your commands with invariants that are ensured to be checked:
 
-## Requirements
-
-## Install
-
-    $ gem install invariant
-
-## Copyright
-
-Copyright (c) 2015 Bob Long
-
-See LICENSE.txt for details.
+```ruby
+MyCommand.run_with_invariants do |x|
+  if x.try(:app_id)
+    x.app_id == current_admin.app.id
+  end
+end
+```
