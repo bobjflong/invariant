@@ -14,10 +14,12 @@ class Example
 end
 
 describe Invariant do
+  let(:check) do
+    Proc.new { |x| x.fetch(:foo) == :bar }
+  end
+
   subject(:ok) do
-    r = Example.run_with_invariants do |x|
-      x.fetch(:foo) == :bar
-    end
+    r = Example.run_with_invariants &check
   end
 
   subject(:bad) do
