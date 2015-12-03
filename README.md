@@ -1,9 +1,5 @@
 # invariant
 
-* [Homepage](https://rubygems.org/gems/invariant)
-* [Documentation](http://rubydoc.info/gems/invariant/frames)
-* [Email](mailto:robertjflong at gmail.com)
-
 ## Description
 
 Given a [command](https://github.com/cypriss/mutations) like:
